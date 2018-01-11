@@ -52,3 +52,23 @@ Array.splice()方法是在数组中插入或删除元素的通用方法。
 	var a = [1,2,3,4,5];
 	a.splice(2,0,'a','b');	//[];a是[1,2,'a','b',3,4,5]
 	a.splice(2,2,[1,2],3);	//['a','b']; a是[1,2[1,2],3,3,4,5]
+### push()和pop()
+> 允许数组当做栈来使用。  
+> push()在数组尾部添加一个或多个元素  
+> pop()删除数组的最后一个元素
+
+	var stack = [];
+	stack.push(1,2)
+	stack.pop();
+
+### unshift()和shift()
+> unshift()在数组的头部添加一个或多个元素  
+> shift()删除数组的第一个元素并将其返回
+
+	var a = [];
+	a.unshift(1);
+	a.unshift(22);
+	a.shift();
+### toString()和toLocaleString()
+
+	[1,2,3].toString()	//'1,2,3'
