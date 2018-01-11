@@ -72,3 +72,17 @@ Array.splice()方法是在数组中插入或删除元素的通用方法。
 ### toString()和toLocaleString()
 
 	[1,2,3].toString()	//'1,2,3'
+
+	//定义一个"2013-07-21 13:12:59 231"的Date对象
+	var date = new Date(2013, 6, 21, 13, 12, 59, 231);
+	document.writeln( date.toLocaleString() );
+	// IE：      2013年7月21日 13:12:59
+	// Chrome：  2013年7月21日 下午1:12:59
+	// FireFox： 2013/7/21 下午1:12:59
+	 
+	//定义一个"公元前200-06-28 08:24:35 105"的Date对象
+	var date2 = new Date(-199, 5, 28, 8, 24, 35, 105);
+	document.writeln( date2.toLocaleString() );
+	// IE：      Sun Jun 28 08:24:35 UTC+0800 200 B.C. 
+	// Chrome：  200年7月1日 上午8:30:27 (缺少负号，日期存在问题)
+	// FireFox：200/6/28 上午8:30:32 (缺少负号)
