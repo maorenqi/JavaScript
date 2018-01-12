@@ -106,3 +106,13 @@ forEach()方法从头至尾遍历数组，为每个元素调用指定的函数�
 		}
 	}
 	foreach.break = new Error("StopIteration");
+
+### map()
+map()方法将调用的数组的每个元素传递给指定的函数，并返回一个数组，它包含该函数的返回值。
+
+	a = [1,2,3];
+	b = a.map(function(x){return x*x;});
+
+> map()有返回值：它不修改调用的数组。
+### filter()
+filter()方法返回的数组元素是调用的数组的一个子集。
