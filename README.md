@@ -86,3 +86,23 @@ Array.splice()方法是在数组中插入或删除元素的通用方法。
 	// IE：      Sun Jun 28 08:24:35 UTC+0800 200 B.C. 
 	// Chrome：  200年7月1日 上午8:30:27 (缺少负号，日期存在问题)
 	// FireFox：200/6/28 上午8:30:32 (缺少负号)
+
+### forEach()
+forEach()方法从头至尾遍历数组，为每个元素调用指定的函数。三个参数：数组元素、元素索引和数组本身
+
+	var data = [1,2,3,4,5];
+	var sum = 0;
+	data.forEach(function(value){sum += value;});
+	sum
+	
+	data.forEach(function(v,i,a){a[i] = v+i});
+	data //[2,3,4,5,6]
+	
+	function forEach(a,f,t){
+		try{a.forEach(f,t);}
+		catch(e){
+			if(e===foreach.break) return;
+			else throw e;
+		}
+	}
+	foreach.break = new Error("StopIteration");
