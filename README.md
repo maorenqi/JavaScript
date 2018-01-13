@@ -120,3 +120,6 @@ filter()方法返回的数组元素是调用的数组的一个子集。如果返
 	a = [5,4,3,2,1];
 	samllvalues = a.filter(function(x){ return x<3});	//[2,1]
 	everyother = a.filter(function(x,i){return i%2 == 0});	//[5,3,1]
+
+### every()和some()
+every()和some()方法是数组的逻辑判定：它们对数组元素应用指定的函数进行判定，返回true或false.
