@@ -115,4 +115,8 @@ map()方法将调用的数组的每个元素传递给指定的函数，并返回
 
 > map()有返回值：它不修改调用的数组。
 ### filter()
-filter()方法返回的数组元素是调用的数组的一个子集。
+filter()方法返回的数组元素是调用的数组的一个子集。如果返回值为true或能转化为true的值，那么传递给判断函数的元素就是这个子集的成员，它将被添加到一个作为返回值的数组中。
+
+	a = [5,4,3,2,1];
+	samllvalues = a.filter(function(x){ return x<3});	//[2,1]
+	everyother = a.filter(function(x,i){return i%2 == 0});	//[5,3,1]
