@@ -123,3 +123,63 @@ filter()方法返回的数组元素是调用的数组的一个子集。如果返
 
 ### every()和some()
 every()和some()方法是数组的逻辑判定：它们对数组元素应用指定的函数进行判定，返回true或false.
+
+every():当且仅当针对数组中的所有元素调用判定函数都返回true,它才返回true
+
+	a=[1,2,3,4,5];
+	a.every(function(x){ return x<10;});	//true
+
+some()：当数组中至少有一个元素调用判定函数返回true,它就返回true;
+
+	a=[1,2,3,4,5];
+	a.some(function(x){return x%2 ==0});	//true:a含有偶数值
+
+### reduce()和reduceRight()
+使用指定的函数将数组元素进行组合，生成单个值。
+
+reduce()需要两个参数：第一个是执行化简操作的函数。第二个（可选）的参数是一个传递给函数的初始值。
+
+	var a=[1,2,3,4,5];
+	var sum = a.reduce(function(x,y){ return x+y},0);//第一次调用化简函数时的参数是0和1。将两者相加并返回1。再次是1和2，返回3.然后是3+3=6、6+4=10，最后计算10+5=15.reduce()返回15.
+reduceRight(),按照数组索引从高到低处理数组。
+
+### indexOf()和lastIndexOf()
+搜索整个数组中具有给定值的元素，返回找到的第一个元素的索引或者如果没有找到就返回-1。indexOf()从头至尾搜索，lastIndexOf()反方向搜索。
+
+	a=[1,2,3,4,5];
+	a.indexOf(1)	//1:a[1]是1
+	a.lastIndexOf(1)	//3：a[3]是1
+	a.indexOf(3)	//-1:没有值为3的元素
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
