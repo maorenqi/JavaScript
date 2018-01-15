@@ -207,7 +207,96 @@ reduceRight(),按照数组索引从高到低处理数组。
 	cat1.makeSound();	
 
 
+## JavaScript常用的几种模式
+### 1.原始模式
+    //1.原始模式，对象字面量方式
+	var person = { 
+	    name: 'Jack',
+	    age: 18,
+	    sayName: function () { alert(this.name); }
+	};
+	//1.原始模式，Object构造函数方式
+	var person = new Object();
+	person.name = 'Jack';
+	person.age = 18;
+	person.sayName = function () {
+	    alert(this.name);
+	};
 
+> 显然，当我们要创建批量的person1、person2……时，
+每次都要敲很多代码，资深copypaster都吃不消！
+然后就有了批量生产的工厂模式。
+ 
+ 
+### 2.工厂模式
+//2.工厂模式，定义一个函数创建对象
+
+	function creatPerson (name, age) {
+	    var person = new Object(); 
+	    person.name = name;
+	    person.age = age;
+	    person.sayName = function () {
+	        alert(this.name);
+	    };
+	    return person; 
+	}
+> 工厂模式就是批量化生产，简单调用就可以进入造人模式（啪啪啪……）。
+ 指定姓名年龄就可以造一堆小宝宝啦，解放双手。
+ 但是由于是工厂暗箱操作的，所以你不能识别这个对象到底是什么类型、
+ 是人还是狗傻傻分不清（instanceof 测试为 Object），
+ 另外每次造人时都要创建一个独立的temp对象，代码臃肿。
+
+### 3.构造函数
+//3.构造函数模式，为对象定义一个构造函数
+
+	function Person (name, age) {
+	    this.name = name;
+	    this.age = age;
+	    this.sayName = function () {
+	        alert(this.name);
+	    };    
+	}
+	var p1 = new Person('Jack', 18); //创建一个p1对象
+	Person('Jack', 18);   
+> 属性方法都给window对象，window.name='Jack'，window.sayName()会输出Jack
+  
+  
+### 4.原型模式
+ //4.原型模式，直接定义prototype属性
+
+	function Person () {}
+	Person.prototype.name = 'Jack';
+	Person.prototype.age = 18;
+	Person.prototype.sayName = function () { alert(this.name); };
+	//4.原型模式，字面量定义方式
+	function Person () {}
+	Person.prototype = {
+	    name: 'Jack',
+	    age: 18,
+	    sayName: function () { alert(this.name); }
+	};
+	var p1 = new Person(); //name='Jack'
+	var p2 = new Person(); //name='Jack'
+	 
+> 这里需要注意的是原型属性和方法的共享，即所有实例中   
+> 都只是引用原型中的属性方法，任何一个地方产生的改动会引起其他实例的变化。
+ 
+### 5.混合模式（构造+原型）
+
+	function Person (name, age) {
+	    this.name = name;
+	    this.age = age;
+	}
+	Person.prototype = {
+	    hobby: ['running','football'];
+	    sayName: function () { alert(this.name); },
+	    sayAge: function () { alert(this.age); }
+	};
+	var p1 = new Person('Jack', 20); 
+	//p1:'Jack',20; __proto__: ['running','football'],sayName,sayAge
+	var p2 = new Person('Mark', 18); 
+	//p1:'Mark',18;__proto__: ['running','football'],sayName,sayAge
+	 
 
 
 
