@@ -155,7 +155,56 @@ reduceRight(),按照数组索引从高到低处理数组。
 
 
 
+##JavaScript定义类的三种方法
+### 1、构造函数法
+	function Cat(){
+		this.name = 'da mao';
+	}
+	Cat.prototype.makeSound = function(){
+		alert('miao miao');
+	}
+	var cat1 = new Cat();
+	alert(cat1.name);
+	cat1.makeSound();
+	//缺点：比较复杂，用到了this和prototype
+			
+### 2、Object.creat()法
+	var Cat = {
+		name:'da mao',
+		makeSound:function(){
+			alert ('miao miao');
+		}
+	}
+	
+	var cat1 = Object.create(Cat);
+	alert(cat1.name);
+	cat1.makeSound();
+	
+	//老浏览器如果不支持，可以用以下代码自行部署
+	if(!Object.create){
+		Object.create = function(o){
+			function F(){
+			}
+			F.prototype = o;
+			return new F()
+		};
+	}
+	//这种方法比“构造函数法”简单，但是不能实现私有属性和私有方法，实例对象之间也不能共享数据。
 
+### 3、极简主义法
+	var Cat = {
+		createNew:function(){
+			var cat = {}
+			cat.name = 'da mao';
+			cat.makeSound = function(){
+				alert ('m  m ');
+			};
+			
+			return cat;
+		}
+	};
+	var cat1 = Cat.createNew();
+	cat1.makeSound();	
 
 
 
