@@ -155,6 +155,16 @@ reduceRight(),按照数组索引从高到低处理数组。
 
 
 
+## 函数
+### 嵌套函数
+	function hypotenuse(a,b){
+		function square(x){
+			return x*x;
+		}
+		return Math.sqrt(square(a)+square(b));
+	}
+> 变量作用域规则
+
 ##JavaScript定义类的三种方法
 ### 1、构造函数法
 	function Cat(){
@@ -338,6 +348,7 @@ reduceRight(),按照数组索引从高到低处理数组。
 	}
 	
 	addX(2)(1) // 3
+
 
 
 
