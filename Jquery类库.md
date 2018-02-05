@@ -19,3 +19,81 @@ $("p.details").css("background-color","yellow").show("fast");
 - jQuery对象	jQuery函数返回的对象
 - 选中元素
 - jQuery方法	$("a").each(f)
+
+**获取和设置HTML属性**
+-
+- attr()
+- removeAttr()
+
+**获取和设置CSS属性**
+- 
+- css()
+
+**获取和设置CSS类**
+- 
+- addClass()
+- removeClass()
+- toggleClass()
+- hasClass()
+
+**获取和设置HTML表单值**
+- 
+- val()
+
+**设置和获取元素内容**
+- 
+- text()
+- html()
+- X[0].innerHTML
+
+**获取和设置元素的位置高度**
+- 
+- offset()
+- position()
+- offsetParent()
+- width()
+- height()
+- outerWidth()
+- outerHeight()
+- scrollTop()
+- scrollLeft()
+
+**获取和设置元素数据**
+- 
+- data()
+- removeDate()
+
+**修改文档-插入和替换文档**
+- 
+- $("h1").append("<br/\>")
+- prepend()
+- before()
+- after()
+- replaceWith()
+- each()
+- map()
+
+- appendTo()
+- prependTo()
+- insertAfter()
+- insertBefore()
+- replaceAll()
+
+
+**复制元素**
+- 
+- clone()
+
+**包装元素**
+- 
+- wrap()
+- wrapInner()
+- wrapAll()
+
+**删除元素**
+- 
+- empty()
+- remove()
+- filter()
+- detach()
+- unwrap
