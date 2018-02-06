@@ -97,3 +97,10 @@ $("p.details").css("background-color","yellow").show("fast");
 - filter()
 - detach()
 - unwrap
+
+**事件处理程序的简单注册**
+- 
+- click()
+- $("p").click(function(){$(this).css("background-color","gray");});
+- addEventListener()
+- attachEvent()
