@@ -104,3 +104,8 @@ $("p.details").css("background-color","yellow").show("fast");
 - $("p").click(function(){$(this).css("background-color","gray");});
 - addEventListener()
 - attachEvent()
+
+**事件处理程序的高级注册**
+- 
+- $('p').click(f) 等价于：
+- $('p').bind('click',f);
