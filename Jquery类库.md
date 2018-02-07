@@ -117,4 +117,19 @@ $("p.details").css("background-color","yellow").show("fast");
 - live()
 - die()
 
-动画效果
+**动画效果**
+- 
+- fadeIn()
+- fadeOut()
+- fadeTo()
+- show()
+- hide()
+- toggle()
+- slideDown()
+- slideUp()
+- slideToggle()
+- animate()
+- jQuery.fx.speeds["medium-fast"]=300;
+
+- $('img').fadeOut().show(300).slideUp().slideToggle();
+
