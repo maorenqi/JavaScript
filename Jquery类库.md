@@ -109,3 +109,12 @@ $("p.details").css("background-color","yellow").show("fast");
 - 
 - $('p').click(f) 等价于：
 - $('p').bind('click',f);
+
+**实时事件**
+- 
+- delegate()
+- undelegate()
+- live()
+- die()
+
+动画效果
